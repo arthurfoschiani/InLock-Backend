@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Email\" : \"cliente@cliente.com\",\n\t\"Senha\" : \"cliente\"\n}"
+							"raw": "{\n\t\"Email\" : \"adm@adm.com\",\n\t\"Senha\" : \"adm\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/login",
@@ -46,9 +46,26 @@
 			"item": [
 				{
 					"name": "Estudios.Listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImNoYXZlIjoidmFsb3IiLCJqdGkiOiIxIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQURNSU5JU1RSQURPUiIsImV4cCI6MTU2NzUxMTkyOCwiaXNzIjoiSW5Mb2NrLldlYkFwaSIsImF1ZCI6IkluTG9jay5XZWJBcGkifQ.t_4YyK47EYBeyvlrTsPjbLqnCRdhIJpkjTviQcBsBKM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5000/api/estudios",
 							"protocol": "http",
@@ -67,6 +84,16 @@
 				{
 					"name": "Estudios.Deletar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwiY2hhdmUiOiJ2YWxvciIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTY3NTEyMDMwLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.ImmF167rWpPDkJppZoi0l8wF6rLoLiD5CIZ2DOdu4M8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -88,6 +115,16 @@
 				{
 					"name": "Estudios.Cadastrar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwiY2hhdmUiOiJ2YWxvciIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBRE9SIiwiZXhwIjoxNTY3NTEyMDMwLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.ImmF167rWpPDkJppZoi0l8wF6rLoLiD5CIZ2DOdu4M8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -99,7 +136,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nomeEstudio\": \"Ubisoft\",\n    \"paisDeOrigem\": \"França\",\n    \"dataCriacao\": \"1986-03-12T00:00:00\",\n    \"usuarioId\": 1\n}"
+							"raw": "{\n\t\"NomeEstudio\": \"fdgfd\",\n    \"PaisOrigem\": \"fdfdg\",\n    \"DataCriacao\": \"1986-03-12T00:00:00\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/estudios",
@@ -146,6 +183,50 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Estudios.BuscarPorNomes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/estudios/buscar/Blizzard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estudios",
+								"buscar",
+								"Blizzard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estudios.BuscarPeloPais",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/estudios/buscarPais/eua",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"estudios",
+								"buscarPais",
+								"eua"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -155,6 +236,16 @@
 				{
 					"name": "Jogos.Listar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImNoYXZlIjoidmFsb3IiLCJqdGkiOiIxIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQURNSU5JU1RSQURPUiIsImV4cCI6MTU2NzUxMDk3OSwiaXNzIjoiSW5Mb2NrLldlYkFwaSIsImF1ZCI6IkluTG9jay5XZWJBcGkifQ.jMZfAMuEwczVtkmKkznUo_7Xn_w43hA0SzVRYivuqF4",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -250,6 +341,70 @@
 								"api",
 								"jogos",
 								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.BuscarPorNome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/jogos/buscar/Diablo 3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"buscar",
+								"Diablo 3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.BucarPelosMaisCaros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/jogos/BucarMaisCaros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"BucarMaisCaros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.BuscarOsMaisRecentes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/jogos/BuscarMaisRecentes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"BuscarMaisRecentes"
 							]
 						}
 					},

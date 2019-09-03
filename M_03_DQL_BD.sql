@@ -20,4 +20,4 @@ select * from Usuarios where Email = 'admin@admin.com' and Senha = 'admin'
 
 select * from Jogos where JogoId = 1
 
-select * from Estudios where EstudioId = 1
+select * from Estudios where EstudioId = 1 

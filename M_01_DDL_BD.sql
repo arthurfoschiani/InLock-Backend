@@ -11,9 +11,9 @@ create table Usuarios(
 create table Estudios(
 	EstudioId int primary key identity,
 	NomeEstudio varchar (255) not null unique,
-	PaisDeOrigem varchar (255) not null,
+	PaisOrigem varchar (255) not null,
 	DataCriacao date,
-	UsuarioId int foreign key references Usuarios(UsuarioId),
+	UsuarioId int foreign key references Usuarios(UsuarioId)
 );
 
 create table Jogos(
